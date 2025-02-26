@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adega do Abelha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+<header>
+    <img src="/static/images/abelha.png" alt="Logo">
+    <h1>Adega do Abelha</h1>
+    <div>
+        <a href="/carrinho" class="carrinho">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section id="produtos">
+        <div class="categoria">
+            <h3>Cervejas </h3>
+            <div class="card">
+                <div class="produto">
+                    <h4>Skol</h4>
+                    <p>R$ 5,00</p>
+                    <button onclick="adicionarAoCarrinho('Skol', 5)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Antárctica</h4>
+                    <p>R$ 6,00</p>
+                    <button onclick="adicionarAoCarrinho('Antárctica', 6)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Bohemia</h4>
+                    <p>R$ 7,00</p>
+                    <button onclick="adicionarAoCarrinho('Bohemia', 7)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Original</h4>
+                    <p>R$ 8,00</p>
+                    <button onclick="adicionarAoCarrinho('Original', 8)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Ipa</h4>
+                    <p>R$ 9,00</p>
+                    <button onclick="adicionarAoCarrinho('Ipa', 9)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h3>Drinks</h3>
+            <div class="card">
+                <div class="produto">
+                    <h4>Caipirinha</h4>
+                    <p>R$ 15,00</p>
+                    <button onclick="adicionarAoCarrinho('Caipirinha', 15)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Caipiroska</h4>
+                    <p>R$ 18,00</p>
+                    <button onclick="adicionarAoCarrinho('Caipiroska', 18)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Batida de Coco</h4>
+                    <p>R$ 12,00</p>
+                    <button onclick="adicionarAoCarrinho('Batida de Coco', 12)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Mojito</h4>
+                    <p>R$ 16,00</p>
+                    <button onclick="adicionarAoCarrinho('Mojito', 16)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Piña Colada</h4>
+                    <p>R$ 20,00</p>
+                    <button onclick="adicionarAoCarrinho('Piña Colada', 20)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h3>Copão</h3>
+            <div class="card">
+                <div class="produto">
+                    <h4>Copão Red Label</h4>
+                    <p>R$ 30,00</p>
+                    <button onclick="adicionarAoCarrinho('Copo de Whisky Clássico', 30)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Copão Smirnoff</h4>
+                    <p>R$ 45,00</p>
+                    <button onclick="adicionarAoCarrinho('Copo de Cristal', 45)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Copão White Horse</h4>
+                    <p>R$ 25,00</p>
+                    <button onclick="adicionarAoCarrinho('Copo Long Drink', 25)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h3>Fumo</h3>
+            <div class="card">
+                <div class="produto">
+                    <h4>Isqueiro</h4>
+                    <p>R$ 10,00</p>
+                    <button onclick="adicionarAoCarrinho('Isqueiro', 10)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Cartela de Fumo</h4>
+                    <p>R$ 20,00</p>
+                    <button onclick="adicionarAoCarrinho('Cartela de Fumo', 20)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Piteira</h4>
+                    <p>R$ 5,00</p>
+                    <button onclick="adicionarAoCarrinho('Piteira', 5)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h3>Salgados </h3>
+            <div class="card">
+                <div class="produto">
+                    <h4>Coxinha</h4>
+                    <p>R$ 3,00</p>
+                    <button onclick="adicionarAoCarrinho('Coxinha', 3)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Pastel</h4>
+                    <p>R$ 4,00</p>
+                    <button onclick="adicionarAoCarrinho('Pastel', 4)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h4>Empada</h4>
+                    <p>R$ 5,00</p>
+                    <button onclick="adicionarAoCarrinho('Empada', 5)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <h2>Adega do Abelha</h2>
+        <ul>
+            <li><a href="termos">Termos de Uso</a></li>
+            <li><a href="quem-somos">Quem Somos</a></li>
+            <li><a href="contato">Contato</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Adega do Abelha. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    function adicionarAoCarrinho(nome, preco) {
+        carrinho.push({ nome, preco });
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        document.getElementById('cart-count').innerText = carrinho.length;
+        alert(nome + " adicionado ao carrinho!"); // Mensagem de feedback
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('cart-count').innerText = carrinho.length;
+    });
+</script>
+
+</body>
+</html>

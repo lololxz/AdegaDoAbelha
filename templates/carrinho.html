@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Adega do Abelha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/carrinho.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Adicionando Font Awesome -->
+</head>
+<body>
+
+<header>
+    <a href="/">
+        <img src="/static/images/abelha.png" alt="Logo">
+    </a>
+    <h1>Adega do Abelha</h1>
+    <a href="index.html" class="carrinho">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </a>
+</header>
+
+<main>
+    <h2>Carrinho de Compras</h2>
+    <ul id="lista-carrinho">
+        <!-- Lista de produtos será gerada dinamicamente -->
+    </ul>
+    <p>Total: R$ <span id="total">0,00</span></p>
+    <button id="finalizar-compra">Finalizar Compra</button>
+</main>
+
+<script>
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    function atualizarCarrinho() {
+        const listaCarrinho = document.getElementById('lista-carrinho');
+        listaCarrinho.innerHTML = ''; // Limpa a lista atual
+
+        let total = 0;
+
+        carrinho.forEach((produto, index) => {
+            const itemCarrinho = document.createElement('li');
+            itemCarrinho.innerHTML = `
+                <span>${produto.nome} - R$ ${produto.preco.toFixed(2)}</span>
+                <button onclick="removerDoCarrinho(${index})">
+                    <i class="fas fa-trash"></i> Remover
+                </button>
+            `;
+            listaCarrinho.appendChild(itemCarrinho);
+            total += produto.preco;
+        });
+
+        document.getElementById('total').innerText = total.toFixed(2);
+        document.getElementById('cart-count').innerText = carrinho.length; // Atualiza o contador do carrinho
+    }
+
+    function removerDoCarrinho(index) {
+        carrinho.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
+        atualizarCarrinho();
+    }
+
+    document.getElementById('finalizar-compra').addEventListener('click', function() {
+        window.location.href = 'pagamento'; // Redireciona para a página de checkout
+    });
+
+    // Atualiza a contagem de itens no carrinho ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        atualizarCarrinho();
+        document.getElementById('cart-count').innerText = carrinho.length;
+    });
+</script>
+
+</body>
+</html>

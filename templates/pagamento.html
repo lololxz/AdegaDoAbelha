@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar - Adega do Abelha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/pagamento.css">
+</head>
+<body>
+
+<header>
+    <a href="/">
+        <img src="/static/images/abelha.png" alt="Logo">
+    </a>
+    <h1>Adega do Abelha</h1>
+    <a href="carrinho.html" class="carrinho">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </a>
+</header>
+
+<main>
+    <h2>Pagamento via Pix</h2>
+    <h3>Lorenzo Fogliano</h3> <!-- Seu nome adicionado aqui -->
+    <div class="container">
+        <h3>Total a Pagar: R$ <span id="total">0,00</span></h3>
+        <img src="/static/images/qrcode-pix.png" alt="QR Code do Pix" class="qrcode">
+        <p>Escaneie o QR Code acima para efetuar o pagamento.</p>
+        <button id="confirmar-pagamento">Confirmar Pagamento</button>
+    </div>
+</main>
+
+<script>
+    // Recupera o total do carrinho
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let total = 0;
+
+    carrinho.forEach(produto => {
+        total += produto.preco;
+    });
+
+    document.getElementById('total').innerText = total.toFixed(2);
+
+    document.getElementById('confirmar-pagamento').addEventListener('click', function() {
+        alert('Pagamento confirmado! Obrigado pela sua compra.');
+        localStorage.removeItem('carrinho'); // Limpa o carrinho após a compra
+        window.location.href = '/'; // Redireciona para a página inicial
+    });
+</script>
+
+</body>
+</html>
