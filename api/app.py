@@ -1,6 +1,8 @@
+import os
 from flask import Flask, render_template
 
-app = Flask(__name__)
+# Define explicitamente o caminho do template
+app = Flask(__name__, template_folder=os.path.join(os.path.abspath(os.path.dirname(__file__))))
 
 @app.route('/')
 def index():
@@ -25,3 +27,6 @@ def quem_somos():
 @app.route('/termos')
 def termos():
     return render_template('termos.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
