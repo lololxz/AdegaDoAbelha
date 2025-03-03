@@ -16,7 +16,6 @@
     <h1>Adega do Abelha</h1>
     <a href="carrinho.html" class="carrinho">
         <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count">0</span>
     </a>
 </header>
 
@@ -43,7 +42,7 @@
     document.getElementById('total').innerText = total.toFixed(2);
 
     document.getElementById('confirmar-pagamento').addEventListener('click', function() {
-        alert('Pagamento confirmado! Obrigado pela sua compra.');
+        alert('Pagamento confirmado! Fale com A(o) Atendente para retirar o seu pedido.');
         localStorage.removeItem('carrinho'); // Limpa o carrinho após a compra
         window.location.href = '/'; // Redireciona para a página inicial
     });

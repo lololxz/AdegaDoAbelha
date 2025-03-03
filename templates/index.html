@@ -172,7 +172,7 @@
         carrinho.push({ nome, preco });
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
         document.getElementById('cart-count').innerText = carrinho.length;
-        alert(nome + " adicionado ao carrinho!"); // Mensagem de feedback
+        alert(nome + " adicionado ao carrinho!"); 
     }
 
     document.addEventListener('DOMContentLoaded', () => {
