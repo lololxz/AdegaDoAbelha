@@ -25,7 +25,3 @@ def quem_somos():
 @app.route('/termos')
 def termos():
     return render_template('termos.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
-from flask import Flask, render_template
