@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template
 
 # Define explicitamente o caminho do template
-app = Flask(__name__, template_folder=os.path.join(os.path.abspath(os.path.dirname(__file__))))
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
